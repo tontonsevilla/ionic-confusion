@@ -24,6 +24,7 @@ import { CommentPage } from '../pages/comment/comment';
 import { LoginPage } from '../pages/login/login';
 import { IonicStorageModule } from '@ionic/storage';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { EmailComposer } from '@ionic-native/email-composer';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     ProcessHttpmsgProvider,
     { provide: 'BaseURL', useValue: baseURL },
     FavoriteProvider,
-    LocalNotifications
+    LocalNotifications,
+    EmailComposer
   ]
 })
 export class AppModule {}
