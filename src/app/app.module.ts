@@ -29,6 +29,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { Camera } from '@ionic-native/camera';
 import { RegisterPage } from '../pages/register/register';
 import { Network } from '@ionic-native/network';
+import { CallNumber } from '@ionic-native/call-number';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { Network } from '@ionic-native/network';
     EmailComposer,
     SocialSharing,
     Camera,
-    Network
+    Network,
+    CallNumber
   ]
 })
 export class AppModule {}

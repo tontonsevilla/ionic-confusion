@@ -18,12 +18,13 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 export class RegisterPage {
 
   registerForm: FormGroup;
-  image: string = 'assets/images/logo.png';
+  image: string = '../assets/imgs/logo.png';
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private viewCtrl: ViewController,
     private camera: Camera,
-    private formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder
+  ) {
 
       this.registerForm = this.formBuilder.group({
         firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)] ],
@@ -33,7 +34,7 @@ export class RegisterPage {
         telnum: ['', [Validators.required, Validators.pattern] ],
         email: ['', [Validators.required, Validators.email] ],
       });
-      
+
   }
 
   ionViewDidLoad() {
@@ -69,6 +70,23 @@ export class RegisterPage {
   onSubmit() {
     console.log(this.registerForm.value);
     this.dismiss();
+  }
+
+  getFromLibrary() {
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.FILE_URI,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.ALLMEDIA,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+    }
+
+    this.camera.getPicture(options).then((imageData) => {
+      this.image = imageData;
+      console.log(imageData);
+    }, (err) => {
+        console.log('Error obtaining picture')
+    });
   }
 
 }

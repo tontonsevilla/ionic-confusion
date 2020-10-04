@@ -20,6 +20,7 @@
     "@angular/http": "^5.2.11",
     "@angular/platform-browser": "5.2.11",
     "@angular/platform-browser-dynamic": "5.2.11",
+    "@ionic-native/call-number": "^4.20.0",
     "@ionic-native/camera": "^4.20.0",
     "@ionic-native/core": "4.20.0",
     "@ionic-native/email-composer": "^4.20.0",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@ionic/app-scripts": "3.2.4",
     "@ionic/lab": "3.2.9",
+    "call-number": "^1.0.1",
     "cordova-android": "^9.0.0",
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-camera": "^5.0.0",
@@ -69,7 +71,8 @@
       "cordova-plugin-camera": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
       },
-      "cordova-plugin-network-information": {}
+      "cordova-plugin-network-information": {},
+      "mx.ferreyra.callnumber": {}
     },
     "platforms": [
       "android"
